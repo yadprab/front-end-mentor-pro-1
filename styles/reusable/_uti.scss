@@ -1,0 +1,226 @@
+:root {
+    --alpha: 1;
+    --alpha-2: 0.8;
+    --alpha-3: 0.6;
+    --alpha-4: 0.4;
+    --alpha-5: 0.2;
+    --fontFw: 200;
+    --fontFw-1: 300;
+    --fontFw-2: 400;
+    --fontFw-3: 500;
+    --fontFw-4: 700;
+    --fontFw-5: 900;
+    --max-width-mob-1: 380px;
+    --max-width-mob: 480px;
+    --max-width-tab: 650px;
+    --max-width-desktop: 900px;
+    --max-width-desktop-2: 1440px;
+    --major-white: #ffffff;
+    --major-black: #000000;
+    --button-pad-1: 1em 2em;
+    --button-pad-2: 0.5em 1em;
+    --button-pad-3: 0.5em 2em;
+    --error: hsl(356, 69%, 56%);
+    --success: hsl(163, 72%, 41%);
+    --focus: hsl(37, 97%, 70%);
+
+    //web-safe-blue
+    --blue-1: #9999ff;
+    --blue-2: #6666ff;
+    --blue-3: #3333ff;
+    --blue-4: #0000ff;
+    --blue-5: #5640f4;
+    --blue-6: #4070f4;
+
+    //web-safe-red
+    --red-1: #ff9999;
+    --red-2: #ff6666;
+    --red-3: #ff3333;
+    --red-4: #ff0000;
+
+
+    //web-safe-green
+    --green-1: #99ff99;
+    --green-2: #66ff66;
+    --green-3: #33ff33;
+    --green-4: #00ff00;
+
+    //web-safe-grey
+    --grey-1: #999999;
+    --grey-2: #666666;
+    --grey-3: #333333;
+    --grey-4: #f3f1fe;
+    --grey-5: #d1d1d1;
+
+    //white
+    --white-1: #fafafa;
+    --white-2: #f8f9fb;
+
+    //dark
+    --dark-1: #212121;
+    --dark-2: #111111;
+
+
+}
+
+
+
+
+
+
+// flex
+@mixin flex-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@mixin flex-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+//box-shadow
+
+@mixin box-shadow {
+    box-shadow: 0 5px 10px -5px rgba($color: #000000, $alpha: var(--alpha))
+}
+
+@mixin box-shadow-2 {
+    box-shadow: 0 5px 10px -5px rgba($color: #000000, $alpha: var(--alpha-2))
+}
+
+@mixin box-shadow-3 {
+    box-shadow: 0 5px 10px -5px rgba($color: #000000, $alpha: var(--alpha-3))
+}
+
+@mixin box-shadow-4 {
+    box-shadow: 0 5px 10px -5px rgba($color: #000000, $alpha: var(--alpha-4));
+}
+
+@mixin box-shadow-5 {
+    box-shadow: 0 5px 10px -5px rgba($color: #000000, $alpha: var(--alpha-5))
+}
+
+//button
+@mixin button {
+    display: inline-block;
+    line-height: 1.5;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.375em 0.75em;
+    font-size: 0.89rem;
+    text-transform: capitalize;
+    border-radius: 2px;
+    letter-spacing: 1px;
+
+}
+
+//svg
+
+@mixin svg-button {
+
+    appearance: none;
+    border: none;
+
+}
+
+@mixin svg-1 {
+
+    path {
+        fill: #000000;
+    }
+
+}
+
+@mixin svg-2 {
+    path {
+        fill: #ffffff;
+    }
+}
+
+//titles
+@mixin main-title {
+
+    text-transform: capitalize;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: var(--font);
+    font-weight: var(--fontW);
+
+}
+
+@mixin article {
+    text-transform: capitalize;
+    line-height: 1.5;
+    max-width: var(--max);
+    font-family: var(--font);
+    font-weight: var(--fontW);
+}
+
+//nav-bar
+
+@mixin nav-mobile {
+
+    width: 100%;
+    max-width: 480px;
+    @include flex-1();
+    justify-content: space-between;
+
+
+
+
+
+
+
+
+
+}
+
+@mixin nav-tab {
+    width: 100%;
+    max-width: 768px;
+
+}
+
+@mixin nav-desktop {
+    width: 100%;
+    max-width: 1280px;
+
+
+
+}
+
+@mixin nav-ipad {
+    width: 100%;
+    max-width: 1024px;
+
+
+}
+
+@mixin ul {
+
+    list-style: none;
+    @include flex-1();
+
+
+    li {
+        margin: 0 1em;
+    }
+
+
+}
+
+@mixin links {
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+
+}

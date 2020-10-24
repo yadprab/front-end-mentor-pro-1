@@ -1,0 +1,266 @@
+@import './reusable/uti';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+
+    //primary    
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+
+    //neutral
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+
+    //font
+    --font: 'Poppins', sans-serif;
+}
+
+//map
+$colors:(supervisor:hsl(180, 62%, 55%),
+    team--builder: hsl(0, 78%, 62%),
+    karma: hsl(34, 97%, 64%),
+    calculator: hsl(212, 86%, 64%));
+
+
+$area:(supervisor: sup,
+    team--builder: team,
+    karma: karma,
+    calculator: calc);
+
+
+//styles
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+
+}
+
+
+body {
+    padding: 4em 1em;
+    background-color: var(--major-white);
+    font-family: var(--font);
+    line-height: 1.5;
+
+}
+
+main {
+    width: 100%;
+    max-width: var(--max-width-mob);
+    margin: 0 auto;
+    @include flex-2;
+
+
+
+
+    span {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        color: var(--Grayish-Blue);
+        letter-spacing: 1px;
+        font-weight: var(--fontFw);
+    }
+
+    h1 {
+        white-space: nowrap;
+        @include main-title;
+        font-size: 1.4rem;
+        font-weight: var(--fontFw-4);
+        color: var(--Very-Dark-Blue);
+    }
+
+    article {
+        @include article;
+        font-size: 0.8rem;
+        max-width: var(--max-width-mob-1);
+        color: var(--Grayish-Blue);
+        line-height: 1.6;
+        text-align: justify;
+        text-align-last: left;
+    }
+}
+
+
+.cards {
+    margin-top: 2em;
+    display: grid;
+    grid-template-areas:
+        "sup   sup sup"
+        "team   team team"
+        "karma  karma   karma"
+        "calc   calc    calc";
+    gap: 1rem;
+    grid-auto-rows: 250px;
+    grid-auto-columns: 100px;
+    place-content: center;
+
+}
+
+.card {
+    background-color: var(--Very-Light-Gray);
+    padding: 1em;
+    @include box-shadow-2();
+    border-radius: 2px;
+    display: grid;
+    position: relative;
+
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 5px solid;
+        border-radius: 2px;
+
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        color: var(--Very-Dark-Blue);
+        letter-spacing: 1px;
+        text-transform: capitalize;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        align-self: end;
+        justify-self: end;
+
+    }
+}
+
+footer {
+    margin-top: 1em;
+}
+
+//loops
+
+@each $name,
+$area-name in $area {
+    .#{$name} {
+        grid-area: $area-name;
+    }
+
+}
+
+@each $name,
+$color in $colors {
+
+    .#{$name} {
+
+        &::before {
+            border-color: $color;
+        }
+
+    }
+
+}
+
+//media-queries
+@media screen and (min-width:690px) {
+
+    main {
+        width: 100%;
+        max-width: var(--max-width-tab);
+        @include flex-2;
+
+
+
+    }
+
+    article {
+        max-width: var(--max-width-tab);
+
+    }
+
+    .cards {
+        grid-template-areas:
+            "sup sup karma karma"
+            "calc calc team team";
+        grid-auto-rows: 220px;
+        grid-auto-columns: 150px;
+
+    }
+
+    .card {
+
+        article {
+            text-align: left;
+        }
+    }
+}
+
+@media screen and (min-width:1100px) {
+
+
+    main {
+        width: 100%;
+        max-width: var(--max-width-desktop-2);
+
+        margin: 0;
+        @include flex-2;
+        height: 100vh;
+
+    }
+
+    article {
+        max-width: var(--max-width-desktop);
+
+    }
+
+    .cards {
+        width: 100%;
+
+
+        grid-template-areas:
+            ".  team ."
+            "sup team calc"
+            "sup karma calc"
+            ".  karma   .";
+
+        grid-auto-rows: 120px;
+        grid-auto-columns: 350px;
+
+
+
+
+
+
+
+
+
+    }
+
+    .card {
+        article {
+            text-align: left;
+        }
+    }
+
+
+
+}

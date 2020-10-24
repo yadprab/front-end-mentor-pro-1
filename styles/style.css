@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+  --alpha: 1;
+  --alpha-2: 0.8;
+  --alpha-3: 0.6;
+  --alpha-4: 0.4;
+  --alpha-5: 0.2;
+  --fontFw: 200;
+  --fontFw-1: 300;
+  --fontFw-2: 400;
+  --fontFw-3: 500;
+  --fontFw-4: 700;
+  --fontFw-5: 900;
+  --max-width-mob-1: 380px;
+  --max-width-mob: 480px;
+  --max-width-tab: 650px;
+  --max-width-desktop: 900px;
+  --max-width-desktop-2: 1440px;
+  --major-white: #ffffff;
+  --major-black: #000000;
+  --button-pad-1: 1em 2em;
+  --button-pad-2: 0.5em 1em;
+  --button-pad-3: 0.5em 2em;
+  --error: hsl(356, 69%, 56%);
+  --success: hsl(163, 72%, 41%);
+  --focus: hsl(37, 97%, 70%);
+  --blue-1: #9999ff;
+  --blue-2: #6666ff;
+  --blue-3: #3333ff;
+  --blue-4: #0000ff;
+  --blue-5: #5640f4;
+  --blue-6: #4070f4;
+  --red-1: #ff9999;
+  --red-2: #ff6666;
+  --red-3: #ff3333;
+  --red-4: #ff0000;
+  --green-1: #99ff99;
+  --green-2: #66ff66;
+  --green-3: #33ff33;
+  --green-4: #00ff00;
+  --grey-1: #999999;
+  --grey-2: #666666;
+  --grey-3: #333333;
+  --grey-4: #f3f1fe;
+  --grey-5: #d1d1d1;
+  --white-1: #fafafa;
+  --white-2: #f8f9fb;
+  --dark-1: #212121;
+  --dark-2: #111111;
+}
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --font: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  padding: 4em 1em;
+  background-color: var(--major-white);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-width-mob);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main span {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: var(--Grayish-Blue);
+  letter-spacing: 1px;
+  font-weight: var(--fontFw);
+}
+
+main h1 {
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-family: var(--font);
+  font-weight: var(--fontW);
+  font-size: 1.4rem;
+  font-weight: var(--fontFw-4);
+  color: var(--Very-Dark-Blue);
+}
+
+main article {
+  text-transform: capitalize;
+  line-height: 1.5;
+  max-width: var(--max);
+  font-family: var(--font);
+  font-weight: var(--fontW);
+  font-size: 0.8rem;
+  max-width: var(--max-width-mob-1);
+  color: var(--Grayish-Blue);
+  line-height: 1.6;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.cards {
+  margin-top: 2em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "sup   sup sup" "team   team team" "karma  karma   karma" "calc   calc    calc";
+  gap: 1rem;
+  grid-auto-rows: 250px;
+  grid-auto-columns: 100px;
+  place-content: center;
+}
+
+.card {
+  background-color: var(--Very-Light-Gray);
+  padding: 1em;
+  -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-2));
+          box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-2));
+  border-radius: 2px;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+}
+
+.card::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 5px solid;
+  border-radius: 2px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: var(--Very-Dark-Blue);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+footer {
+  margin-top: 1em;
+}
+
+.supervisor {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: sup;
+}
+
+.team--builder {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: team;
+}
+
+.karma {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: karma;
+}
+
+.calculator {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: calc;
+}
+
+.supervisor::before {
+  border-color: #45d3d3;
+}
+
+.team--builder::before {
+  border-color: #ea5353;
+}
+
+.karma::before {
+  border-color: #fcaf4a;
+}
+
+.calculator::before {
+  border-color: #549ef2;
+}
+
+@media screen and (min-width: 690px) {
+  main {
+    width: 100%;
+    max-width: var(--max-width-tab);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  article {
+    max-width: var(--max-width-tab);
+  }
+  .cards {
+        grid-template-areas: "sup sup karma karma" "calc calc team team";
+    grid-auto-rows: 220px;
+    grid-auto-columns: 150px;
+  }
+  .card article {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    width: 100%;
+    max-width: var(--max-width-desktop-2);
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+  }
+  article {
+    max-width: var(--max-width-desktop);
+  }
+  .cards {
+    width: 100%;
+        grid-template-areas: ".  team ." "sup team calc" "sup karma calc" ".  karma   .";
+    grid-auto-rows: 120px;
+    grid-auto-columns: 350px;
+  }
+  .card article {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=style.css.map */
